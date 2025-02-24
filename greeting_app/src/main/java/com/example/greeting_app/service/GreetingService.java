@@ -12,6 +12,7 @@ public class GreetingService {
         this.greetingRepository = greetingRepository;
     }
 
+    //UC_04
     public String getGreetingMessage() {
         return "Hello World!";
     }
@@ -19,5 +20,11 @@ public class GreetingService {
     public Greeting saveGreeting(String message) {
         Greeting greeting = new Greeting(message);
         return greetingRepository.save(greeting);
+    }
+
+    //UC_05
+    // Fetch greeting by ID
+    public Greeting getGreetingById(Long id) {
+        return greetingRepository.findById(id).orElse(null);
     }
 }
