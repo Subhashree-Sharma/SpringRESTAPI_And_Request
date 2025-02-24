@@ -12,15 +12,15 @@ public class Greeting {
     private Long id;
     private String message;
 
-    // Default constructor (required by JPA)
+    //Default constructor (required by JPA)
     public Greeting() {}
 
-    // Constructor
+    //Constructor
     public Greeting(String message) {
         this.message = message;
     }
 
-    // Getters and Setters
+    //Getters and Setters
     public Long getId() {
         return id;
     }
