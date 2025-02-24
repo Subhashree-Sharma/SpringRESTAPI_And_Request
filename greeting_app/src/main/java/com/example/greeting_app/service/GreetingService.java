@@ -48,4 +48,8 @@ public class GreetingService {
                 .orElse(null);
     }
 
+    //UC_08
+    public void deleteGreeting(Long id) {
+        greetingRepository.deleteById(id);
+    }
 }
