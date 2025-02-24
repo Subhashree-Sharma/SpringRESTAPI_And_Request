@@ -3,6 +3,7 @@ import com.example.greeting_app.service.GreetingService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/greeting")
@@ -27,5 +28,13 @@ public class GreetingController {
     @GetMapping("/message")
     public String getServiceGreeting() {
         return greetingService.getGreetingMessage();
+    }
+
+    // UC 3 - Personalized Greeting
+    @GetMapping("/personalized")
+    public String getPersonalizedGreeting(
+            @RequestParam(required = false) String firstName,
+            @RequestParam(required = false) String lastName) {
+        return greetingService.getPersonalizedGreeting(firstName, lastName);
     }
 }
