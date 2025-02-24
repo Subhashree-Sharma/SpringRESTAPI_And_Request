@@ -19,4 +19,10 @@ public class GreetingController {
     public Greeting saveGreeting(@RequestParam String message) {
         return greetingService.saveGreeting(message);
     }
+
+    //UC_05 - Find Greeting by ID
+    @GetMapping("/{id}")
+    public Greeting getGreetingById(@PathVariable Long id) {
+        return greetingService.getGreetingById(id);
+    }
 }
