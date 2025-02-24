@@ -37,4 +37,15 @@ public class GreetingService {
         return greetings;
     }
 
+    //UC_07 - Update a Greeting Message
+    public Greeting updateGreeting(Long id, String message) {
+        return greetingRepository.findById(id)
+                .map(greeting -> {
+                    greeting.setMessage(message);
+                    return greetingRepository.save(greeting);
+                })
+                //Returns null if ID is not found
+                .orElse(null);
+    }
+
 }
